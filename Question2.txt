@@ -1,0 +1,129 @@
+/** * What is wrong with this example, and how would you go about fixing or improving the component? 
+*/ 
+// class App extends React.Component {  
+//     constructor(props) {
+//       super(props);
+//       this.state = {
+//         name: this.props.name || 'Anonymous'
+//       }
+//     }    
+//     render() {
+//       return (
+//         <p>Hello {this.state.name}</p
+//       );  
+//     }
+//   }
+  
+In this above given class based component, in line no. 12 we are missing a ">", hence it will show an error of , no closing tag
+for <p>.
+
+
+3)  /**
+ * Can you explain the differences between all those ways of passing function to a component?
+  * What happens when you click each of the buttons?
+ */
+
+
+
+
+class App extends React.Component {
+  
+  constructor() {
+    super(); 
+    this.name = 'MyComponent';
+    
+    this.handleClick2 = this.handleClick1.bind(this);
+  }
+  
+  handleClick1() {
+    alert(this.name);
+  }
+  
+  handleClick3 = () => alert(this.name);
+render() {
+    return (
+      <div>
+        <button onClick={this.handleClick1()}>click 1</button>
+        <button onClick={this.handleClick1}>click 2</button>
+        <button onClick={this.handleClick2}>click 3</button>
+        <button onClick={this.handleClick3}>click 4</button>
+      </div>
+    );
+  }
+
+i)  (click1) ====> this.handleClick1() will be invoked as soon as the page is rendered on the screen.if we click on click1 button
+                    then it wont do anything.
+
+ii) (click2) ===> if we will click on ckick2 button then it will throw a error on "cannot read property name of undefined"
+                  aS it is not having the this. property bind to it.
+
+iii)(click3) ===> this.handleClick2 will be invoked when the user will be clicking on click2 button.It will bind the (this)
+property with the handleClick1()
+
+iv) (click4) ===> this.handleClick3 will be invoked when user click on click3 button, as it is written in es6 syntax(=>),
+ so it will run without binding this property, as in es6, this property in inbuilt binded.
+
+
+
+ 
+ 4) /**
+    * What's the issue with this component. Why?  How would you go about fixing it?
+   */
+class App extends React.Component {
+state = { search: '' }
+handleChange = event => {
+/**
+     * This is a simple implementation of a "debounce" function,
+     * which will queue an expression to be called in 250ms and
+     * cancel any pending queued expressions. This way we can 
+     * delay the call 250ms after the user has stoped typing.
+     */
+    clearTimeout(this.timeout);
+    this.timeout = setTimeout(() => {
+      this.setState({
+        search: event.target.value
+      })
+    }, 250);
+  }
+render() {
+    return (
+      <div>
+        <input type="text" onChange={this.handleChange} />
+        {this.state.search ? <p>Search for: {this.state.search}</p> : null}
+      </div>
+    )
+  }
+}
+
+      </div>
+    )
+  }
+}
+
+Answer: in the above code we have given extra closing div, and along with that, three extra paranthesis, that is 
+creating error in the code.The correct code is as follows:
+
+
+
+          class App extends React.Component {
+  state = { search: '' }
+  handleChange = event => {
+      clearTimeout(this.timeout);
+      this.timeout = setTimeout(() => {
+        this.setState({
+          search: event.target.value
+        })
+      }, 250);
+    }
+  render() {
+      return (
+        <div>
+          <input type="text" onChange={this.handleChange} />
+          {this.state.search ? <p>Search for: {this.state.search}</p> : null}
+        </div>
+      )
+    }
+  }
+    
+    
+  export default App;

@@ -1,0 +1,73 @@
+i)	What are the major features of Reactjs?
+        Reactjs is a singlePage Application, i.e it doesn't need to reload the page again , if some changes happened in our Component.
+        It provides the solution of reloading all the components data, as in case of other frontend tools(jquery,ajax).
+
+ii)    	How is Element and Component different?
+            ELements are like <input>,<p>,<h1>...etc. which id the basic buildings of the html.
+            COMPONENTS: There are the basic block of React, as we also used to sday that in react everything is component.
+                        In react the function returns and renders the component.
+
+iii)     	What are the different phases of component lifecycle?
+
+                The react is having life cycles which plays an important role, in maintaining the functionality of react.These are:
+                ComponentDidMount()
+                Render()
+                ComponentDidUpdate()
+                ComponentWillUnmount()
+                And few lifecycles are not much used as:
+                componentShouldUpdate()
+                
+
+        iv)   	What are the lifecycle methods of React?
+                The react lifecycle methods are responsible for rendering the component on the screen, if there is some change, and
+                 update in state/props of the component.
+                 Eg: ComponentDidMount()
+                     Render()
+                     ComponentDidUpdate()
+                    ComponentWillUnmount()
+        
+        v)      5.	What are different ways to create components in ReactJS?
+
+                    The react component can be created in two ways:
+                    1)Class Based Component
+                    2)Function Based Component.
+
+                NODEJS:
+
+        i)     What is NodeJs and what is usage?
+
+                NodeJs is a technique through which we can run out code on our own localmachine, i.e, we need not to open
+                webPage to render the result. It uses V8 engine of googleChrome.
+        
+        
+        ii)   What is the use of NODE_ENV?
+
+
+        iii) What is Event loop in NodeJS and how does it works?
+
+            Event loop is responsible for storing the requested the task, which is asked by the client, it will store all the
+            asynchoronous task and perform one by one, after the completion of one task it will go and check the container where 
+            it stored tasks, and perform again the next task, till the eventLoop gets empty.
+
+
+        iv)  What is the difference between aynchronous and non-blocking?
+            asynchoronous :- Bydefault JavaScript is synchronous in nature, but if we want to make JavaScript works asynchoronously
+            then we can do it by the help of (async,await).It will wait till the task get completed and after resolving the promises,
+            returned , it will execute the next task.
+
+            Non-Blocking: - Non Blocking means the node thread will not be prevented by doing the next task in queue, it will keep 
+            on performing, without waiting for any promises to be resolved.
+
+            v) Differentiate between readFile vs createREadStream in nodejs?
+               
+               readFile:- readFile is a object inside the 'fs' of Node.it is used to read the data from the given locations, 
+               and if the data is read succesfully, then it will return the data, else it will return the error, occoured while
+               reading the data.
+
+               createREadStream:-It will create a stream in node object which will read the data from the given location.
+
+         
+    
+
+
+                    
